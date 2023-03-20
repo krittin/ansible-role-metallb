@@ -4,11 +4,11 @@
       apiVersion: metallb.io/v1beta1
       kind: IPAddressPool
       metadata:
-        name: {{ item.name }}
+        name: "{{ item.name }}"
         namespace: metallb-system
       spec:
         addresses: 
-          - {{ item.pool }}
+          - "{{ item.pool }}"
   with_items: "{{ ip_pools }}"
 
 - name: configure layer2 mode for external announcement
@@ -21,5 +21,5 @@
         namespace: metallb-system
       spec:
         ipAddressPools:
-        - {{ item.name }}
+        - "{{ item.name }}"
   with_items: "{{ ip_pools }}"
