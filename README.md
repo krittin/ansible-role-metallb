@@ -17,15 +17,14 @@ Role Variables
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: localhost
       environment:
         K8S_AUTH_KUBECONFIG: /path/to/your/kubeconfig
       roles:
         - role: krittin.metallb
-          ip_pool:
-            - "192.168.0.101-192.168.0.110"
+          ip_pools:
+            - { name: "app1": pool: "192.168.0.101-192.168.0.110" }
+            - { name: "app2": pool: "192.168.1.101-192.168.1.200" }
 
 
 License
