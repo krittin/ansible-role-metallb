@@ -1,0 +1,9 @@
+- name: configure ip pool
+  kubernetes.core.k8s:
+    template: ip-pool.yml.j2
+    state: present
+
+- name: configure layer2 mode for external announcement
+  kubernetes.core.k8s:
+    definition: "{{ lookup('file', 'l2-advertise.yml') | from_yaml }}"
+    state: present

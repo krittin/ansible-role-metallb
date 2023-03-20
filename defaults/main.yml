@@ -1,0 +1,3 @@
+# Manifest file for installation from https://metallb.universe.tf/installation/#installation-by-manifest
+metallb_manifest_url: https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
+metallb_manifest: /tmp/metallb-native.yaml

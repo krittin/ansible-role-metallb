@@ -1,0 +1,15 @@
+- name: download metallb manifest
+  get_url:
+    url: "{{ metallb_manifest_url }}"
+    dest: "{{ metallb_manifest }}"
+
+- name: "apply {{ metallb_manifest }}"
+  kubernetes.core.k8s:
+    src: "{{ metallb_manifest }}"
+    state: present
+    wait: yes
+
+- name: clean up
+  file:
+    path: "{{ metallb_manifest }}"
+    state: absent
