@@ -19,7 +19,3 @@
       metadata:
         name: l2-advertise
         namespace: metallb-system
-      spec:
-        ipAddressPools:
-        - "{{ item.name }}"
-  with_items: "{{ ip_pools }}"
